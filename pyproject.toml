@@ -1,0 +1,89 @@
+[project]
+name = "recipe-generator"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Mona",email = "mona.mokart@lvmh.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11, <3.15"
+dependencies = [
+    "pandas (>=3.0.1,<4.0.0)",
+    "numpy (>=2.4.3,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "transformers (>=5.3.0,<6.0.0)",
+    "torch (>=2.10.0,<3.0.0)",
+    "gcsfs (>=2026.2.0,<2027.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.5.1"
+ipykernel = "^7.2.0"
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 100
+indent-width = 4
+fix = true
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["B", "C", "E", "F", "I", "W"]
+ignore = ["E501", "E731", "B006"]
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 130
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
