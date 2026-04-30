@@ -13,7 +13,14 @@ dependencies = [
     "openpyxl (>=3.1.5,<4.0.0)",
     "transformers (>=5.3.0,<6.0.0)",
     "torch (>=2.10.0,<3.0.0)",
-    "gcsfs (>=2026.2.0,<2027.0.0)"
+    "gcsfs (>=2026.2.0,<2027.0.0)",
+    "google-cloud-storage (>=2.0.0)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "langchain-google-genai (>=4.2.1,<5.0.0)",
+    "langchain-core (>=1.2.18,<2.0.0)",
+    "tavily-python (>=0.7.23,<0.8.0)",
+    "langchain-community (>=0.4.1,<0.5.0)",
+    "matplotlib (>=3.10.8,<4.0.0)",
 ]
 
 
@@ -24,6 +31,9 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.5.1"
 ipykernel = "^7.2.0"
+pydantic = "^2.12.5"
+langchain = "^1.2.10"
+langgraph = "^1.0.10"
 
 [tool.ruff]
 exclude = [
